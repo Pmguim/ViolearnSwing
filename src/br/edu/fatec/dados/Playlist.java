@@ -24,28 +24,6 @@ public class Playlist {
         return tamanho;
     }
 
-    public void adicionarMusica(Musica musica) {
-        if (tamanho < 10){
-            boolean musicaExistente = false;
-            for (int i = 0; i < tamanho; i++){
-                if (musicas[i] != null && musicas[i].equals(musica)){
-                    musicaExistente = true;
-                    break;
-                }
-            }
-
-            if (!musicaExistente) {
-                musicas[tamanho] = musica;
-                tamanho++;
-            } else {
-                JOptionPane.showMessageDialog(null, "Essa música já está na playlist.");
-            }
-        } else {
-            JOptionPane.showMessageDialog(null,"A playlist está cheia. " +
-                    "Não é possível inserir mais músicas.");
-        }
-    }
-
     public void listar(int id){
             musicas[id].imprimirCifra();
     }

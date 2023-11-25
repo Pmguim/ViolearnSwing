@@ -85,13 +85,13 @@ public class Opcoes {
         ActionListener listener = new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
-                if (playlist.isNull()){
+                /*if (playlist.isNull()){
                     JOptionPane.showMessageDialog(framePlaylist,"Não há o que mostrar da playlist," +
                             " pois ela está vazia.", "Playlist vazia", JOptionPane.WARNING_MESSAGE);
                 } else {
                     framePlaylist.dispose();
                     new Listar(nomePlaylist).montarJanela();
-                }
+                }*/
             }
 
         };

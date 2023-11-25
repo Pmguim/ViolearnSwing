@@ -1,5 +1,6 @@
 package br.edu.fatec.telas;
 
+import br.edu.fatec.dados.Adicionar;
 import br.edu.fatec.dados.Cifra;
 import br.edu.fatec.dados.Musica;
 
@@ -55,30 +56,27 @@ public class AddMusica {
         //x,y, largura, altura
         adicionar.setBounds(260,420,150,33);
 
-        ActionListener listener = new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
+        ActionListener listener = e -> {
 
-                try {
-                    // Tentar converter o texto para um número
-                    codigo = Integer.parseInt(textCodigo.getText());
+            try {
+                // Tentar converter o texto para um número
+                codigo = Integer.parseInt(textCodigo.getText());
 
-                    // Verificar se o código é um número inteiro
-                    if (codigo % 1 != 0) {
-                        JOptionPane.showMessageDialog(frame, "O código inserido não é um número inteiro. Tente novamente.",
-                                "Erro", JOptionPane.WARNING_MESSAGE);
-                    } else if (codigo > 8 || codigo < 0) {
-                        // Verificar se o código é menor que 9 e maior que 0
-                        JOptionPane.showMessageDialog(frame, "O código inserido não está no intervalo válido. Tente novamente.",
-                                "Erro", JOptionPane.WARNING_MESSAGE);
-                    } else {
-                        // Se todas as verificações passarem, abrir a janela
-                        JOptionPane.showMessageDialog(frame, "A música foi adicionada com sucesso à Playlist.");
-                    }
-                } catch (NumberFormatException ex) {
-                    // Se não for possível converter para um número
-                    JOptionPane.showMessageDialog(frame, "O código inserido não é um número válido. Tente novamente.",
+                // Verificar se o código é um número inteiro
+                if (codigo > 8 || codigo < 0) {
+                    // Verificar se o código é menor que 9 e maior que 0
+                    JOptionPane.showMessageDialog(frame, "O código inserido não está no intervalo válido. Tente novamente.",
                             "Erro", JOptionPane.WARNING_MESSAGE);
+                } else {
+                    // Se todas as verificações passarem, abrir a janela
+                    new Adicionar(codigo);
+                    new Listar(codigo, nomePlaylist);
+                    JOptionPane.showMessageDialog(frame, "A música foi adicionada com sucesso à Playlist.");
                 }
+            } catch (NumberFormatException ex) {
+                // Se não for possível converter para um número
+                JOptionPane.showMessageDialog(frame, "O código inserido não é um número válido. Tente novamente.",
+                        "Erro", JOptionPane.WARNING_MESSAGE);
             }
         };
         adicionar.addActionListener(listener);
@@ -129,7 +127,7 @@ public class AddMusica {
     String[] colunas = {"Código", "Nome", "Artista"};
     String[][] dados = {{"Código", "Nome", "Artista"},
             {"0", "Believer", "Imagine Dragons"},
-            {"1", "Chocolate", ""},
+            {"1", "Chocolate", "Ana Frango Elétrico"},
             {"2", "Às Vezes um Clichê", "Maglore"},
             {"3", "Come As You Are", "Nirvana"},
             {"4", "Não Quero Dinheiro", "Tim Maia"},
