@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 public class Adicionar {
 
-    Musica[] musicas;
+    Musica[] musicas = new Musica[10];
     int tamanho;
     Musica believer, chocolate, cliche, come,
     dinheiro, flores, gostava, promessas, tempo;
@@ -15,10 +15,10 @@ public class Adicionar {
     int codigo;
     JLabel label1;
 
+
     public Adicionar(int codigo) {
         this.codigo = codigo;
         this.tamanho = 0;
-        this.musicas = new Musica[10];
     }
 
     public void adicionar(Musica novaMusica){

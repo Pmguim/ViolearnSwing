@@ -6,13 +6,11 @@ import java.awt.*;
 public class Playlist {
 
     String nomePlaylist;
-    Musica[] musicas;
+    private Musica[] musicas = new Musica[10];
     int tamanho;
-
 
     public Playlist(String nomePlaylist) {
         this.nomePlaylist = nomePlaylist;
-        this.musicas = new Musica[10];
         this.tamanho = 0;
     }
 
@@ -24,9 +22,9 @@ public class Playlist {
         return tamanho;
     }
 
-    public void listar(int id){
+    /*public void listar(int id){
             musicas[id].imprimirCifra();
-    }
+    }*/
 
     public boolean nulo(){
         for (int i = 0; i < musicas.length; i++){
@@ -37,14 +35,14 @@ public class Playlist {
         return true;
     }
 
-    public void mostrarMusica(int id) {
+    /*public void mostrarMusica(int id) {
 
         if (musicas[id] == null) {
             JOptionPane.showMessageDialog(null, "Índice inválido, tente novamente.");
         } else {
             musicas[id].imprimirCifra();
         }
-    }
+    }*/
 
     public boolean isNull() {
         for (int i = 0; i < musicas.length; i++) {

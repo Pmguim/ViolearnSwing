@@ -59,30 +59,25 @@ public class TelaCifra {
         //x,y, largura, altura
         adicionar.setBounds(260,420,150,33);
 
-        ActionListener listener = new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
+        ActionListener listener = e -> {
 
-                try {
-                    // Tentar converter o texto para um número
-                    codigo = Integer.parseInt(textCodigo.getText());
+            try {
+                // Tentar converter o texto para um número
+                codigo = Integer.parseInt(textCodigo.getText());
 
-                    // Verificar se o código é um número inteiro
-                    if (codigo % 1 != 0) {
-                        JOptionPane.showMessageDialog(frame, "O código inserido não é um número inteiro. Tente novamente.",
-                                "Erro", JOptionPane.WARNING_MESSAGE);
-                    } else if (codigo > 8 || codigo < 0) {
-                        // Verificar se o código é menor que 9 e maior que 0
-                        JOptionPane.showMessageDialog(frame, "O código inserido não está no intervalo válido. Tente novamente.",
-                                "Erro", JOptionPane.WARNING_MESSAGE);
-                    } else {
-                        // Se todas as verificações passarem, abrir a janela
-                        new Ciframe(codigo).montarJanela();
-                    }
-                } catch (NumberFormatException ex) {
-                    // Se não for possível converter para um número
-                    JOptionPane.showMessageDialog(frame, "O código inserido não é um número válido. Tente novamente.",
+                // Verificar se o código é um número inteiro
+                if (codigo > 8 || codigo < 0) {
+                    // Verificar se o código é menor que 9 e maior que 0
+                    JOptionPane.showMessageDialog(frame, "O código inserido não está no intervalo válido. Tente novamente.",
                             "Erro", JOptionPane.WARNING_MESSAGE);
+                } else {
+                    // Se todas as verificações passarem, abrir a janela
+                    new Ciframe(codigo).montarJanela();
                 }
+            } catch (NumberFormatException ex) {
+                // Se não for possível converter para um número
+                JOptionPane.showMessageDialog(frame, "O código inserido não é um número válido. Tente novamente.",
+                        "Erro", JOptionPane.WARNING_MESSAGE);
             }
         };
         adicionar.addActionListener(listener);

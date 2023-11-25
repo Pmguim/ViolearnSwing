@@ -58,18 +58,14 @@ public class Opcoes {
         btnRemove = new JButton("Remover músicas");
         btnRemove.setBounds(240,180,150,33);
 
-        ActionListener listener = new ActionListener() {
+        ActionListener listener = e -> {
 
-            public void actionPerformed(ActionEvent e) {
-
-                if (playlist.nulo()){
-                    JOptionPane.showMessageDialog(null, "Não há o que remover, pois a playlist está vazia.", "Playlist vazia", JOptionPane.OK_OPTION);
-                } else {
-                    new RemoverMusica(nomePlaylist).montarJanela();
-                    framePlaylist.dispose();
-                }
+            if (playlist.nulo()){
+                JOptionPane.showMessageDialog(null, "Não há o que remover, pois a playlist está vazia.", "Playlist vazia", JOptionPane.OK_OPTION);
+            } else {
+                new RemoverMusica(nomePlaylist).montarJanela();
+                framePlaylist.dispose();
             }
-
         };
 
         btnRemove.addActionListener(listener);

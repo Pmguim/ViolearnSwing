@@ -70,7 +70,6 @@ public class AddMusica {
                 } else {
                     // Se todas as verificações passarem, abrir a janela
                     new Adicionar(codigo);
-                    new Listar(codigo, nomePlaylist);
                     JOptionPane.showMessageDialog(frame, "A música foi adicionada com sucesso à Playlist.");
                 }
             } catch (NumberFormatException ex) {

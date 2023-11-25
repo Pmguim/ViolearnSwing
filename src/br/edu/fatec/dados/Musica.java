@@ -1,19 +1,14 @@
 package br.edu.fatec.dados;
 
 import javax.swing.*;
-import java.awt.*;
 
 public class Musica{
 
-    String compositor;
-    String nomeMusica;
-    String cifra;
-    String[] musicas = new String[9];
-    String[] artistas = new String[7];
+    /*String[] musicas = new String[9];
+    String[] artistas = new String[7];*/
+    JLabel lblCifra;
 
-    JLabel lblNomeMusica, lblCompositor, lblCifra;
-
-    public void setMusicas() {
+    /*public void setMusicas() {
         musicas[0] = "Believer";
         musicas[1] = "Chocolate";
         musicas[2] = "Às Vezes um Clichê";
@@ -43,25 +38,6 @@ public class Musica{
 
     public String[] getArtistas(){
         return artistas;
-    }
-
-    public void setCifra(String cifra) {
-        this.cifra = cifra;
-    }
-
-    public String getCifra() {
-        return cifra;
-    }
-
-    public void imprimirDetalhes() {
-        lblNomeMusica = new JLabel("Título: " + nomeMusica);
-        lblCompositor = new JLabel("Artista: " + compositor);
-    }
-
-    public void imprimirCifra() {
-        lblNomeMusica = new JLabel("Título: " + nomeMusica);
-        lblCompositor = new JLabel("Artista: " + compositor);
-        lblCifra = new JLabel(cifra);
-    }
+    }*/
 
 }
